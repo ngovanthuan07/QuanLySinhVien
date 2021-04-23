@@ -9,8 +9,6 @@ public class MySort {
         list.add(2);
         
         // Cach 1:
-        list.stream().sorted((o1,o2) -> (int) (o2 - o1)).forEach(System.out::println);
-        // Cach 2:
         Comparator<Integer> comparator = new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
@@ -18,8 +16,9 @@ public class MySort {
             }
         };
         Collections.sort(list,comparator.reversed());
-        list.forEach(System.out::println);
-        
+        list.forEach(System.out::println);        
+        // Cach 2:
+        list.stream().sorted((o1,o2) -> (int) (o2 - o1)).forEach(System.out::println);
         // Cach 3:
         Comparator<Integer> comparator = ((o1, o2) -> (int) (o1 - o2));
         list.stream().sorted(comparator.reversed()).forEach(System.out::println);
